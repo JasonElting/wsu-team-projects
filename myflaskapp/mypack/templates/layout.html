@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+<title>Mobile RFID Reader</title>
+<meta http-equiv="refresh" content="5; url={{ url_for('get_inventory') }}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<div class=page>
+	<h1>Mobile RFID Reader</h1>
+	<nav role="navigation" class="navbar">
+		<a href="/rfid/api/v1/inventory">Dashboard</a>
+		<a href="/rfid/api/v1/flight">Flight Plan</a>
+		<a href="/rfid/api/v1/database">Database</a>
+		<a href="/rfid/api/v1/about">About</a>
+	</nav>
+	{% for message in get_flashed_messages() %}
+	<div class=flash>{{ message }}</div>
+	{% endfor %}
+	
+	<p><em>Page refreshes every five seconds to update incoming inventory...</em></p>
+	<div class="sidebar">
+	<!--<div class="create">{% block body %}{% endblock %}</div>-->
+	<div class="search">{% block search %}{% endblock %}</div>
+	{% block update %}{% endblock %}
+	<div class="delete">{% block delete %}{% endblock %}</div>
+	</div>
+	{% block database %}{% endblock %}
+	{% block about %}{% endblock %}
+	<h3>Scanned Inventory</h3>
+	<div class="main">{% block results %}{% endblock %}</div>
+</div>

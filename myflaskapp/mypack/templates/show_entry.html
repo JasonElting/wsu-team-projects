@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block search %}
+
+<ul class=result>
+	{{ if result != None }}
+	<li><h2>{{ result.title }}</h2>{{ result.tag }} <em>{{ result.location }}</em>
+	{{ else }}
+	<em>No entries!</em>
+</ul>
+{% endblock %}

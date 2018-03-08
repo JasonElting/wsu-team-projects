@@ -1,0 +1,78 @@
+{% extends "layout3.html" %}
+
+{% block body_database %}
+<h2>Create</h2>
+
+<form type = "input" action="{{ url_for('create_item') }}" method="post">
+	<dl class="forminput">
+		<dt>Title:
+		<dd><input type=text name=title>
+		<dt>Tag:
+		<dd><input type=text name=tag>
+		<dt>Location:
+		<dd><input type=text name=location>
+		<dd><input type=submit value="Create">
+	</dl>
+</form>
+{% endblock %}
+
+{% block search_database %}
+<h2>Search</h2>
+<form action="{{ url_for('get_database_item') }}" method="post">
+	<dl>
+	<!--<dt>ID:
+	<dd><input type=text name=id>-->
+	<dt>Tag:
+	<dd><input type=text name=tag>
+	<dd><input type=submit value="Check">
+	</dl>
+</form>
+
+<ul class=result>
+	{% if result %}
+	<li><h2>{{ result.title }}</h2>{{ result.tag }} <em>{{ result.location }}</em>
+	{% else %}
+	<em>No entries!</em>
+	{% endif %}
+</ul>
+
+{% endblock %} 
+
+{% block update_database %}
+<div class="update">
+<h2>Update</h2>
+<form action="{{ url_for('update_item') }}" method="post">
+	<dl>
+	<dt>Tag:
+	<dd><input type=text name=tag>
+	<dt>Title:
+	<dd><input type=text name=title>
+	<dt>Locaction:
+	<dd><input type=text name=location>
+	<dd><input type=submit value="Update">
+	</dl>
+</form>
+</div>
+{% endblock %}
+
+{% block delete_database %}
+<h2>Delete</h2>
+<form action="{{ url_for('delete_item') }}" method="post">
+	<dl>
+        <dt>Tag:
+        <dd><input type=text name=tag>
+        <dd><input type=submit value="Delete">
+       </dl>
+</form>
+{% endblock %}
+
+{% block database %}
+	<ul class=entries>
+	
+        {% for entry in entries %}
+	<li><h3>{{ entry.title }}</h3>Tag: {{ entry.tag }}<br><em>Location: {{ entry.location }}</em>
+        {% else %}
+	<li><em>No entries!</em>
+	{% endfor %}
+	</ul>
+{% endblock %}

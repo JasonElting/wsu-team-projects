@@ -1,0 +1,20 @@
+<!doctype html>
+<head>
+<title>Mobile RFID Reader</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<div class=page>
+	<h1>Mobile RFID Reader</h1>
+	<nav role="navigation" class="navbar">
+	<a href="/rfid/api/v1/inventory">Dashboard</a>
+	<a href="/rfid/api/v1/flight">Flight Plan</a>
+	<a href="/rfid/api/v1/database">Database</a>
+	<a href="/rfid/api/v1/about">About</a>
+	</nav>
+
+	{% block database %}{% endblock %}
+	{% block about %}{% endblock %}
+	{% block flight %}{% endblock %}
+</div>
+

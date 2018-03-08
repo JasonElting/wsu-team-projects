@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block search %}
+<h2>Search</h2>
+<form action="{{ url_for('get_item') }}" method="post">
+	<dl>
+	<!--<dt>ID:
+	<dd><input type=text name=id>-->
+	<dt>Tag:
+	<dd><input type=text name=tag>
+	<dd><input type=submit value="Check">
+	</dl>
+</form>
+
+<ul class=result>
+	{% if result %}
+	<li><h2>{{ result.title }}</h2>{{ result.tag }} <em>{{ result.location }}</em>
+	{% else %}
+	<em>No entries!</em>
+	{% endif %}
+</ul>
+
+{% endblock %} 
+
+{% block delete %}
+<h2>Delete</h2>
+<form action="{{ url_for('delete_returned_inventory') }}" method="post">
+	<dl>	
+	<dd><input type=submit value="Delete">
+       </dl>
+</form>
+{% endblock %}
+
+{% block results %}
+	<ul class=entries>
+	
+        {% for entry in entries %}
+	<li><h3>{{ entry.title }}</h3>Tag: {{ entry.tag }}<br><em>Location: {{ entry.location }}</em>
+        {% else %}
+	<li><em>No entries!</em>
+	{% endfor %}
+	</ul>
+{% endblock %}
