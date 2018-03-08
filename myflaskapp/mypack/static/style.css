@@ -97,7 +97,7 @@ input[type=button]{
 	
 }
 
-.create, .search, .update, .delete{
+.create, .search, .update, .delete, .backup{
 	padding: 10px;
 	margin: 10px;
 	border: 5px solid #333;

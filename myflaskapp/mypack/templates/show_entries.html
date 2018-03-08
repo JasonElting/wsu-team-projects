@@ -14,7 +14,7 @@
 
 <ul class=result>
 	{% if result %}
-	<li><h2>{{ result.title }}</h2>{{ result.tag }} <em>{{ result.location }}</em>
+	<li><h3>{{ result.title }}</h3>Tag: {{ result.tag }}<br> <em>Location: {{ result.location }}</em>
 	{% else %}
 	<em>No entries!</em>
 	{% endif %}
@@ -23,10 +23,10 @@
 {% endblock %} 
 
 {% block delete %}
-<h2>Delete</h2>
+<h2>Clear</h2>
 <form action="{{ url_for('delete_returned_inventory') }}" method="post">
 	<dl>	
-	<dd><input type=submit value="Delete">
+	<dd><input type=submit value="Clear Returned Inventory">
        </dl>
 </form>
 {% endblock %}

@@ -12,7 +12,7 @@
 import os
 import sqlite3
 import shelve
-from flask import Flask, jsonify, request, session, g, redirect, url_for,abort, render_template, flash
+from flask import Flask, jsonify, request, session, g, redirect, url_for,abort, render_template, flash, send_file
 #from flask_httpauth import HTTPBasicAuth
 
 app=Flask(__name__)
@@ -173,10 +173,14 @@ def get_database_item():
 #@auth.login_required
 def create_item():
     db  = get_db()
-    db.execute('insert into entries (title, tag, location) values (?, ?, ?)', 
+    try:
+    	db.execute('insert into entries (title, tag, location) values (?, ?, ?)', 
             [request.form['title'], request.form['tag'], request.form['location']])
-    db.commit()
-    flash('New entry successfully created')
+    	db.commit()
+	flash("New entry successfully created")
+    except:
+	flash("Entry with same tag number already exists")
+
     return redirect(url_for('get_database'))
 
 #method for POSTing information to returned inventory tag
@@ -204,7 +208,7 @@ def create_inventory_item():
     thelocation = str(cur2.fetchone()[0])  
   
     if (thetitle != ''):
-        db.execute('insert into entries (title, tag, location) values (?, ?, ?)',
+	db.execute('insert into entries (title, tag, location) values (?, ?, ?)',
             [thetitle, thetag, thelocation])
     db.commit()
     flash('New entry successfully created')
@@ -216,10 +220,15 @@ def create_inventory_item():
 def update_item():
     db = get_db()
     tag = request.form['tag']
-    t = (request.form['title'],request.form['location'],tag)
-    db.execute('UPDATE entries SET title = ?, location =? where tag = ?',t)
+    title = request.form['title']
+    if (title != ''):
+    	t = (title,request.form['location'],tag)
+    	db.execute('UPDATE entries SET title = ?, location =? where tag = ?',t)
+    else:
+        t = (request.form['location'],tag)
+	db.execute('UPDATE entries SET location =? where tag = ?', t)
     db.commit()
-    flash('Record updated successfully')
+    flash('Record updated successfully if it existed')
     return redirect(url_for('get_database'))
 
 #method for deleting inventory item from the inventory database
@@ -230,7 +239,7 @@ def delete_item():
     tag = (request.form['tag'],)
     db.execute('DELETE from entries WHERE tag = ?',tag)
     db.commit()
-    flash("Record deleted")
+    flash("Record deleted if it existed")
     return redirect(url_for('get_database'))
 
 @app.route('/rfid/api/v1/inventory/delete_returned_inventory', methods=['POST'])
@@ -240,3 +249,8 @@ def delete_returned_inventory():
     db.execute('delete from entries')
     db.commit()
     return redirect(url_for('get_inventory'))
+
+@app.route('/rfid/api/v1/getDatabase', methods=['GET'])
+def get_database_file():
+    return send_file('/var/www/myflaskapp/mypack/rfid.db',
+   	             as_attachment=True)

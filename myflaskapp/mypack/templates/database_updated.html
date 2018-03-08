@@ -30,7 +30,7 @@
 
 <ul class=result>
 	{% if result %}
-	<li><h2>{{ result.title }}</h2>{{ result.tag }} <em>{{ result.location }}</em>
+	<li><h3>{{ result.title }}</h3>Tag: {{ result.tag }}<br> <em>Location: {{ result.location }}</em>
 	{% else %}
 	<em>No entries!</em>
 	{% endif %}
@@ -64,6 +64,12 @@
         <dd><input type=submit value="Delete">
        </dl>
 </form>
+{% endblock %}
+
+{% block backup %}
+<h2>Backup</h2>
+<br>
+<a href="http://130.108.78.45:8000/rfid/api/v1/getDatabase">Backup Database</a>
 {% endblock %}
 
 {% block database %}
