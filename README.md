@@ -1,4 +1,4 @@
-#Mobile RFID Reader
+# Mobile RFID Reader
 
 Welcome to the documentation for the Mobile RFID Reader. This documentation is divided into two main sub-sections, namely **Drone-Inventory App** and **Unmanned Aerial Vehicle (UAV) Setup/Configuration**. 
 
@@ -8,14 +8,14 @@ The project utilizes a Bebop 2 drone as the base and utilizes a variety of senso
 
 (This documentation was formatted with Markdown and therefore a Markdown reader is recommended!)
 
-###Authors:
+### Authors:
 [Jason Elting](mailto:elting.2@wright.edu "elting.2@wright.edu"), [Jameson Morgan](mailto:morgan.219@wright.edu "morgan.219@wright.edu"), [Zia Anwar](mailto:anwar.3@wright.edu "anwar.3@wright.edu") and [Kiran Wani](mailto:wani.4@wright.edu "wani.4@wright.edu")
 
-###GitHub:
+### GitHub:
 
 https://github.com/morgan219/wsu-team-projects (restricted)
 
-###License:
+### License:
 The MIT License
 
 Copyright 2018 Jason Elting, Jameson Morgan, Zia Anwar and Kiran Wani
@@ -26,13 +26,13 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-###Notice:
+### Notice:
 
 <em>This project was developed for Team Projects I & II (CEG 4980/4981 or EE 4910/4920) at Wright State University (WSU) during the Fall 2017 and Spring 2018 semesters. All aspects of this project remain the intellectual property of Wright State University and this project's authors (named above).</em>
 
 <br>
 
-##Drone-Inventory App
+## Drone-Inventory App
 The Drone-Inventory App is the graphical user interface (GUI) for the Mobile RFID Reader project. The application operates on port 8000 and is accessible through the following URL or IP:
 
 * URL: http://team21.cs.wright.edu:8000/rfid/api/v1/inventory
@@ -41,16 +41,16 @@ The Drone-Inventory App is the graphical user interface (GUI) for the Mobile RFI
 
 The application is password protected and uses the HTTPAuth login process. Only users with valid username/password combinations are allowed to access the Drone-Inventory App. NOTE: The drone utilizes a special username/password combination for accessing the application.
 
-###Returned Inventory Display:
+### Returned Inventory Display:
 By default, the returned inventory database is deleted after an application refresh. In addition, a user can utilize the "Delete" button to simply clear all entries returned. This **will not** delete the items from the inventory database but simply "clears" the returned inventory screen.
 
-###Database Configuration:
+### Database Configuration:
 - id, unique-autoincrementer, integer
 - title, title of inventory item, string type
 - tag, tag number of inventory item, string type
 - location, location information for inventory item, text type
 
-###API:
+### API:
 The application is based upon a REST API with data being passed in via HTTP GET and POST requests. Data is passed in using using the HTTP form format (application/x-www-urlencoded) and is retrieved using `request.form['tag_id']` from within the Flask application.
 
 <pre>
@@ -85,7 +85,7 @@ The application is based upon a REST API with data being passed in via HTTP GET 
 +___________________________________________________________________________________+________+__________________________________+_________________________________________________________+
 </pre>
 
-###Sample API Calls (using curl):
+### Sample API Calls (using curl):
 Only items which exist in the main database will be displayed. In other words, if a scanned tag does not exist within the main database, it will not be displayed to the user. The UAV scanning application should utilize an HTTP POST request in order to pass this information to the application. An example 'curl' call is included below for reference.
 
 Display Scanned Item <br>
@@ -94,7 +94,7 @@ Display Scanned Item <br>
 Create Inventory Item <br>
 `curl -u <username>:<password> -d "tag=<tag_number>&title=<title>&location=<location>" -X POST http://team21.cs.wright.edu:8000/rfid/api/v1/inventory`
 
-###API NOTES:
+### API NOTES:
 
 * Only unique tags are accepted during creation. If a user inputs a tag which already exists within the main database, a friendly error message will result. If a user tries to display the same tag to the user, an error will result.
 * The .../posttag url should be used for displaying the current scanned inventory, however, please note that it simply checks for a valid entry in the main database and displays it. Therefore, in order to properly update the location please call .../update url with the updated location prior to calling the .../posttag url. This will ensure that the displayed tag utilizes the most recent location.
@@ -105,4 +105,4 @@ the reader used is the sparkfun m6e nano reader with this python mercuryapi wrap
 
 <br>
 
-##Unmanned Aerial Vehicle (UAV) Setup/Configuration
+## Unmanned Aerial Vehicle (UAV) Setup/Configuration
