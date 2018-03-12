@@ -101,7 +101,18 @@ Create Inventory Item <br>
 * Updating the inventory can take up to three parameters, namely the title tag and location. If the title is left out, it simply updates the the location.
 
 ### RFID Reader:
-the reader used is the sparkfun m6e nano reader with this python mercuryapi wrapper https://github.com/gotthardp/python-mercuryapi
+The reader used for this project is the sparkfun M6E Nano. This reader is based upon one of th ThingMagic RFID readers and therefore can utilize the ThingMagic Python Wrapper Library (https://github.com/gotthardp/python-mercuryapi). We utilized this library for our project. To install the ThingMagic Python Wrapper Library, simply follow the installation instructions located on the repositories GitHub page.
+
+### Scanning RFID Tags:
+The scanning of RFID tags occurs through the `scan_rfid.py` file. The following settings are configurable and are modified in-code:
+
+* `runtime`: specifies how long to scan for tags, by default 10 seconds
+* `region`: specifies the geographical region, by default NA2
+* `protocol`: specifies the rfid type, by default GEN2 for EPC Gen. 2
+* `power`: specifies power in centi-decibles, by default 1900
+* `credentials`: specifies the login credentials to the Drone-Inventory App, format: username:password
+* `posturl`: specifies the URL that should be used to POST tags to
+* `antenna`: specifies which antenna to use, defaults to 1
 
 <br>
 
