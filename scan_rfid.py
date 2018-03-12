@@ -5,10 +5,10 @@ import mercury
 import subprocess
 reader = mercury.Reader("tmr:///dev/ttyUSB0", baudrate=115200)
 
-runtime = 10
+runtime = 60
 region = "NA2"
 protocol = "GEN2"
-power = 1900
+power = 2700
 credentials = "drone:36024pAbxHY"
 post_url = "http://team21.cs.wright.edu:8000/rfid/api/v1/inventory/posttag"
 antenna = 1
@@ -26,11 +26,6 @@ reader.set_read_plan([antenna], protocol, read_power=power)
 #subprocess.call(['curl', '-u', credentials,'-d', tag, '-X', 'POST', post_url])
 
 #reader.start_reading(lambda tag: print(tag.epc, tag.antenna, tag.read_count, tag.rssi))
-reader.start_reading(lambda tag: post_tag(tag))
+reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
 time.sleep(runtime)
 reader.stop_reading()
-
-def post_tag(tag):
-    tag_to_post = "tag="+tag.epc 
-    subprocess.call(['curl', '-u', credentials,'-d', tag_to_post, '-X', 'POST', post_url])
-    print(tag.epc, tag.antenna, tag.read_count, tag.rssi)
