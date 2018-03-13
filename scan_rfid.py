@@ -8,7 +8,7 @@ reader = mercury.Reader("tmr:///dev/ttyUSB0", baudrate=115200)
 runtime = 60
 region = "NA2"
 protocol = "GEN2"
-power = 2700
+power = 1900
 credentials = "drone:36024pAbxHY"
 post_url = "http://team21.cs.wright.edu:8000/rfid/api/v1/inventory/posttag"
 antenna = 1
