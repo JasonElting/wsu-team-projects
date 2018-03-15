@@ -116,6 +116,22 @@ The scanning of RFID tags occurs through the `scan_rfid.py` file. The following 
 
 <br>
 
+### Running `scan_rfid.py` on Raspberry Pi
+1. Start a python3 shell 
+1. Import script using `import scan_rfid.py`
+
 ## Unmanned Aerial Vehicle (UAV) Setup/Configuration
+Below, we discuss the drone configuration and setup used for our project.
+
 ### Current Hardware: 
-![alt text](https://i.imgur.com/0dPaKkW.jpg "Hardware")
+Our design currently makes use of the following:
+
+* M6E Simultaneous RFID Reader
+* Raspberry Pi Nano W
+* 1000C PowerBoost Circuit
+* FTDI - to - USB Breakout Board
+* 18650 35A with at least 3000mAh
+* 3-Port USB Hub
+* 802.11n WiFi Adapter
+* 5dB PCB Antenna
+* U.fl to MMCX
