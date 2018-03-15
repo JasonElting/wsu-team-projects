@@ -117,3 +117,5 @@ The scanning of RFID tags occurs through the `scan_rfid.py` file. The following 
 <br>
 
 ## Unmanned Aerial Vehicle (UAV) Setup/Configuration
+### Current Hardware: 
+![alt text](https://i.imgur.com/0dPaKkW.jpg "Hardware")
