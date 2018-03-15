@@ -34,3 +34,4 @@ try:
 except KeyboardInterrupt:
     print("KB interrupt detected: exiting")
     sys.exit()
+sys.exit()
