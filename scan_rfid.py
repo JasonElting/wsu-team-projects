@@ -6,7 +6,7 @@ import mercury
 import subprocess
 reader = mercury.Reader("tmr:///dev/ttyUSB0", baudrate=115200)
 
-runtime = 60
+runtime = 10
 region = "NA2"
 protocol = "GEN2"
 power = 1900
@@ -31,6 +31,7 @@ try:
     reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
     time.sleep(runtime)
     reader.stop_reading()
+    sys.exit()
 except KeyboardInterrupt:
     print("KB interrupt detected: exiting")
     sys.exit()
