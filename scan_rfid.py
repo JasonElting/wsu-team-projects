@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import print_function
 import time
+import sys
 import mercury
 import subprocess
 reader = mercury.Reader("tmr:///dev/ttyUSB0", baudrate=115200)
@@ -26,6 +27,10 @@ reader.set_read_plan([antenna], protocol, read_power=power)
 #subprocess.call(['curl', '-u', credentials,'-d', tag, '-X', 'POST', post_url])
 
 #reader.start_reading(lambda tag: print(tag.epc, tag.antenna, tag.read_count, tag.rssi))
-reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
-time.sleep(runtime)
-reader.stop_reading()
+try:
+    reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
+    time.sleep(runtime)
+    reader.stop_reading()
+except KeyboardInterrupt:
+    print("KB interrupt detected: exiting")
+    sys.exit()
