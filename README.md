@@ -138,5 +138,5 @@ Our design currently makes use of the following:
 
 ### Current Images of UAV
 ![The Drone](drone_img1.JPG)
-![Sensor Package](drone_img2JPG)
+![Sensor Package](drone_img2.JPG)
 ![Side View of Drone](drone_img3.JPG)
