@@ -137,4 +137,6 @@ Our design currently makes use of the following:
 * U.fl to MMCX
 
 ### Current Images of UAV
-![The Drone](https://raw.githubusercontent.com/morgan219/wsu-team-projects/master/IMG_1201.JPG)
+![The Drone](IMG_1201.JPG)
+![Sensor Package](IMG_1202.JPG)
+![Side View of Drone](IMG_1203.JPG)
