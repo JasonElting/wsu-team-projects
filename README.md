@@ -114,11 +114,11 @@ The scanning of RFID tags occurs through the `scan_rfid.py` file. The following 
 * `posturl`: specifies the URL that should be used to POST tags to
 * `antenna`: specifies which antenna to use, defaults to 1
 
-<br>
-
 ### Running `scan_rfid.py` on Raspberry Pi
 1. Start a python3 shell 
 1. Import script using `import scan_rfid.py`
+
+<br>
 
 ## Unmanned Aerial Vehicle (UAV) Setup/Configuration
 Below, we discuss the drone configuration and setup used for our project.
