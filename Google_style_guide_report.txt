@@ -1,0 +1,41 @@
+No config file found, using default configuration
+************* Module scan_rfid
+C:  4, 0: Line too long (125/100) (line-too-long)
+C:  5, 0: Line too long (119/100) (line-too-long)
+C: 37, 0: Line too long (137/100) (line-too-long)
+C: 37, 0: Exactly one space required after comma
+    reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
+                                                            ^ (bad-whitespace)
+C: 37, 0: Exactly one space required after comma
+    reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
+                                                                 ^ (bad-whitespace)
+C: 37, 0: Exactly one space required after comma
+    reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
+                                                                             ^ (bad-whitespace)
+C: 37, 0: Exactly one space required after comma
+    reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
+                                                                                  ^ (bad-whitespace)
+C: 37, 0: Exactly one space required after comma
+    reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
+                                                                                                                 ^ (bad-whitespace)
+C: 37, 0: Exactly one space required after comma
+    reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
+                                                                                                                      ^ (bad-whitespace)
+C: 37, 0: Exactly one space required after comma
+    reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
+                                                                                                                             ^ (bad-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+E: 11, 0: Unable to import 'mercury' (import-error)
+C: 13, 0: Invalid constant name "reader" (invalid-name)
+C: 15, 0: Invalid constant name "runtime" (invalid-name)
+C: 16, 0: Invalid constant name "region" (invalid-name)
+C: 17, 0: Invalid constant name "protocol" (invalid-name)
+C: 18, 0: Invalid constant name "power" (invalid-name)
+C: 19, 0: Invalid constant name "credentials" (invalid-name)
+C: 20, 0: Invalid constant name "post_url" (invalid-name)
+C: 21, 0: Invalid constant name "antenna" (invalid-name)
+C: 12, 0: standard import "import subprocess" should be placed before "import mercury" (wrong-import-order)
+
+-----------------------------------
+Your code has been rated at 0.38/10
+
