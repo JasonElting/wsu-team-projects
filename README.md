@@ -59,7 +59,7 @@ Central management location for the main database of inventory items. This page 
 About page for the project.
 
 ### API:
-The application is based upon a REST API with data being passed in via HTTP GET and POST requests. Data is passed in using using the HTTP form format (application/x-www-urlencoded) and is retrieved using `request.form['tag_id']` from within the Flask application.
+The application is based upon a REST API with data being passed in via HTTP GET and POST requests. Data is passed in using using the HTTP form format (application/x-www-urlencoded) and is retrieved using `request.form['element_index']` from within the Flask application.
 
 <pre>
 +___________________________________________________________________________________+________+____________________________________________________________________________________________+
@@ -89,7 +89,7 @@ The application is based upon a REST API with data being passed in via HTTP GET 
 +-----------------------------------------------------------------------------------+--------+----------------------------------+---------------------------------------------------------+
 | http://team21.cs.wright.edu:8000/rfid/api/v1/inventory/getDatabase                | GET    | None                             | Returns the main database for backup purposes           |
 +-----------------------------------------------------------------------------------+--------+----------------------------------+---------------------------------------------------------+
-| http://team21.cs.wright.edu:8000/rfid/api/v1/keepAlive (COMING SOON!)             | GET    | None                             | Keep alive used for checking communication with Pi      |
+| http://team21.cs.wright.edu:8000/rfid/api/v1/keepAlive (NOT IMPLEMENTED!)         | GET    | None                             | Keep alive used for checking communication with Pi      |
 +___________________________________________________________________________________+________+__________________________________+_________________________________________________________+
 </pre>
 
@@ -125,7 +125,6 @@ The scanning of RFID tags occurs through the `scan_rfid.py` file. The following 
 ### Running `scan_rfid.py` on Raspberry Pi
 1. Start a python3 shell 
 1. Import script using `import scan_rfid.py`
-
 <br>
 
 ## Unmanned Aerial Vehicle (UAV) Setup/Configuration
