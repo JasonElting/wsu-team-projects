@@ -4,9 +4,9 @@ Welcome to the documentation for the Mobile RFID Reader. This documentation is d
 
 This projects situates itself as a high-level "proof-of-concept." The ultimate goal of this project is to show that scanning RFID-enabled inventory from a UAV is feasible and can provide tremendous performance benefits for both inventory managers as well as in-field workers.
 
-The project utilizes a Bebop 2 drone as the base and utilizes a variety of sensors to detect RFID enabled inventory as well as its approximate location (see the "Unmanned Aerial Vehicle (UAV) Setup/Configuration" for additional details). All of this data is made accessible to users via the Drone-Inventory App. Viewing scanned inventory, flight control as well as inventory management can all be performed using the Drone-Inventory App.
+The project utilizes a Bebop 2 drone as the base and utilizes an RFID scanner to detect RFID-enabled inventory (see the "Unmanned Aerial Vehicle (UAV) Setup/Configuration" for additional details). All data is made accessible to users via the web-based, Drone-Inventory App. Viewing scanned inventory as well as inventory management can all be performed using the Drone-Inventory App.
 
-(This documentation was formatted with Markdown and therefore a Markdown reader is recommended!)
+(Note: This documentation was formatted with Markdown and therefore a Markdown reader is recommended!)
 
 ### Authors:
 [Jason Elting](mailto:elting.2@wright.edu "elting.2@wright.edu"), [Jameson Morgan](mailto:morgan.219@wright.edu "morgan.219@wright.edu"), [Zia Anwar](mailto:anwar.3@wright.edu "anwar.3@wright.edu") and [Kiran Wani](mailto:wani.4@wright.edu "wani.4@wright.edu")
@@ -33,7 +33,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <br>
 
 ## Drone-Inventory App
-The Drone-Inventory App is the graphical user interface (GUI) for the Mobile RFID Reader project. The application operates on port 8000 and is accessible through the following URL or IP:
+The Drone-Inventory App is the graphical user interface (GUI) for the Mobile RFID Reader project. The application operates on port 8000 and is accessible when on the WSU-Secure network through the following URL or IP:
 
 * URL: http://team21.cs.wright.edu:8000/rfid/api/v1/inventory
 
@@ -41,14 +41,22 @@ The Drone-Inventory App is the graphical user interface (GUI) for the Mobile RFI
 
 The application is password protected and uses the HTTPAuth login process. Only users with valid username/password combinations are allowed to access the Drone-Inventory App. NOTE: The drone utilizes a special username/password combination for accessing the application.
 
-### Returned Inventory Display:
-By default, the returned inventory database is deleted after an application refresh. In addition, a user can utilize the "Delete" button to simply clear all entries returned. This **will not** delete the items from the inventory database but simply "clears" the returned inventory screen.
+### Returned Inventory Display (Default Screen):
+By default, the returned inventory database is deleted after an application refresh. In addition, a user can utilize the "Clear Returned Inventory" button to simply clear all entries returned. This **will not** delete the items from the inventory database but simply "clears" the returned inventory screen. All items scanned by the mobile RFID reader will appear on this page. Additionally, this returned list of inventory is searchable by tag id.
+
+### Flight Plan:
+Not implemented in GUI due to time constraints. All flight plan configuration takes place within a linux-based machine using the Parrot ARDrone3 SDK. Future work would focus on providing an easy-to-use GUI-based flight plan manager.
 
 ### Database Configuration:
-- id, unique-autoincrementer, integer
-- title, title of inventory item, string type
-- tag, tag number of inventory item, string type
-- location, location information for inventory item, text type
+Central management location for the main database of inventory items. This page allows creation, delation, searching and updating of RFID inventory. Additionally, a current list of inventory items is displayed on the right side. Finally, at the bottom-left one can backup the database using the convienent "Backup Database" link. For advanced users, we provide the format for each inventory item.
+
+- id, unique-autoincrementer, primary key, integer
+- title, title of inventory item, string type and not null
+- tag, tag number of inventory item, string type and not null
+- location, location information for inventory item, text type and not null
+
+### About:
+About page for the project.
 
 ### API:
 The application is based upon a REST API with data being passed in via HTTP GET and POST requests. Data is passed in using using the HTTP form format (application/x-www-urlencoded) and is retrieved using `request.form['tag_id']` from within the Flask application.
