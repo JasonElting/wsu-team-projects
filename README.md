@@ -156,9 +156,9 @@ Our design currently makes use of the following:
 * A collection of breadboard jumpers
 
 ### Hardware Configuration:
-<em>Initial Setup</em> We placed all components on a blank PCB board and utilized 3M Command Strips for attachement. This was done for convience as it allowed us to quickly remove components as necessary for design and testing. We conn
+<em>Initial Setup:</em> We placed all components on a blank PCB board and utilized 3M Command Strips for attachement. This was done for convience as it allowed us to quickly remove components as necessary for design and testing. We conn
 
-<em>Connecting the RFID Reader, power circuit and Pi</em> We attached the M6E Nano RFID reader, the 1000C PowerBoost and the Raspberry Pi Zero W (in case) to the PCB. We then connected the jumpers from the FTDI breakout board to the appropriate pins on the M6E Nano, namely NC, TX0, RX1, VCC, NC and GND. Please note, that the if one simply connects the pins in order starting from the green side (labeled) of the FTDI board to the corresponding pins on the M6E nano when starting at the green side (labeled), the device will function properly. Nevertheless, a mapping is detailed below:
+<em>Connecting the RFID Reader, power circuit and Pi:</em> We attached the M6E Nano RFID reader, the 1000C PowerBoost and the Raspberry Pi Zero W (in case) to the PCB. We then connected the jumpers from the FTDI breakout board to the appropriate pins on the M6E Nano, namely NC, TX0, RX1, VCC, NC and GND. Please note, that the if one simply connects the pins in order starting from the green side (labeled) of the FTDI board to the corresponding pins on the M6E nano when starting at the green side (labeled), the device will function properly. Nevertheless, a mapping is detailed below:
 
 <pre>
 FTDI | to | M6E
@@ -170,9 +170,9 @@ CTS  | -> | NC
 GND  | -> | GND
 </pre>
 
-<em>Power Configuration</em> Next, we placed the 18650 battery clips on a piece of 3M Command Strip so that the length was equal to that of the 18650 battery and soldered the wire-side of the JST jumper to the appropriate ends of the battery clips. We then attached this to the top of the Raspberry Pi Zero W case and covered the Pi's header with electrical tape to prevent acidental shorts. Next, we placed the JST connection into the JST input/output on the 1000C PowerBoost. To power the M6E nano we took the 5V and GND output of the 1000C PowerBoost and connected it to the +5V and GND pins on the M6E Nano.
+<em>Power Configuration:</em> Next, we placed the 18650 battery clips on a piece of 3M Command Strip so that the length was equal to that of the 18650 battery and soldered the wire-side of the JST jumper to the appropriate ends of the battery clips. We then attached this to the top of the Raspberry Pi Zero W case and covered the Pi's header with electrical tape to prevent acidental shorts. Next, we placed the JST connection into the JST input/output on the 1000C PowerBoost. To power the M6E nano we took the 5V and GND output of the 1000C PowerBoost and connected it to the +5V and GND pins on the M6E Nano.
 
-<em>USB Hub </em> Lastly, we connected the USB hub to the Pi and used the USB to Micro-B insert to bridge the connection. To the hub, we attached the USB to Mini-B cable and attached the other end to the FTDI breakout board. We also attached the 802.11n WiFi dongle to the hub. Finally, we took the USB to Micro-B and attached it to the USB output on the 1000C PowerBoost and the Micro-B side to the power input of the Pi.
+<em>USB Hub:</em> Lastly, we connected the USB hub to the Pi and used the USB to Micro-B insert to bridge the connection. To the hub, we attached the USB to Mini-B cable and attached the other end to the FTDI breakout board. We also attached the 802.11n WiFi dongle to the hub. Finally, we took the USB to Micro-B and attached it to the USB output on the 1000C PowerBoost and the Micro-B side to the power input of the Pi.
 
 ### Current Images of UAV
 ![The Drone](drone_img1.JPG)
