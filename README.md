@@ -47,6 +47,8 @@ By default, the returned inventory database is deleted after an application refr
 ### Flight Plan:
 Not implemented in GUI due to time constraints. All flight plan configuration takes place within a linux-based machine using the Parrot ARDrone3 SDK. Future work would focus on providing an easy-to-use GUI-based flight plan manager.
 
+[INSERT FLIGHT PLAN CONFIG INSTRUCTIONS]
+
 ### Database Configuration:
 Central management location for the main database of inventory items. This page allows creation, delation, searching and updating of RFID inventory. Additionally, a current list of inventory items is displayed on the right side. Finally, at the bottom-left one can backup the database using the convienent "Backup Database" link. For advanced users, we provide the format for each inventory item.
 
@@ -127,9 +129,6 @@ The scanning of RFID tags occurs through the `scan_rfid.py` file. The following 
 1. Start a python3 shell 
 1. Import script using `import scan_rfid.py`
 <em>You may stop the program at any time using the common ctrl+c command if the program is ran in the Python shell.</em>
-
-### Flight Plan Control
-[FLIGHT PLAN DOCUMENTATION GOES HERE]
 
 ### WiFi Quick Configuration: 
 We have provided a script to enable quick and efficient auto-connection to the required networks. This script was added to the ./bashrc file on the Raspberry Pi Zero W. The script is detailed in the `config_wifi.sh` file.
