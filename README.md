@@ -128,6 +128,9 @@ The scanning of RFID tags occurs through the `scan_rfid.py` file. The following 
 1. Import script using `import scan_rfid.py`
 <em>You may stop the program at any time using the common ctrl+c command if the program is ran in the Python shell.</em>
 
+### Flight Plan Control
+[FLIGHT PLAN DOCUMENTATION GOES HERE]
+
 ### WiFi Quick Configuration: 
 We have provided a script to enable quick and efficient auto-connection to the required networks. This script was added to the ./bashrc file on the Raspberry Pi Zero W. The script is detailed in the `config_wifi.sh` file.
 
