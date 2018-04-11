@@ -104,16 +104,17 @@ Create Inventory Item <br>
 
 ### API NOTES:
 
-* Only unique tags are accepted during creation. If a user inputs a tag which already exists within the main database, a friendly error message will result. If a user tries to display the same tag to the user, an error will result.
+* Only unique tags are accepted during creation. If a user inputs a tag which already exists within the main database, a friendly error message will result.
 * The .../posttag url should be used for displaying the current scanned inventory, however, please note that it simply checks for a valid entry in the main database and displays it. Therefore, in order to properly update the location please call .../update url with the updated location prior to calling the .../posttag url. This will ensure that the displayed tag utilizes the most recent location.
 * Updating the inventory can take up to three parameters, namely the title tag and location. If the title is left out, it simply updates the the location.
 
 ### RFID Reader:
-The reader used for this project is the sparkfun M6E Nano. This reader is based upon one of th ThingMagic RFID readers and therefore can utilize the ThingMagic Python Wrapper Library (https://github.com/gotthardp/python-mercuryapi). We utilized this library for our project. To install the ThingMagic Python Wrapper Library, simply follow the installation instructions located on the repositories GitHub page.
+The reader used for this project is the sparkfun M6E Nano. This reader is based upon one of th ThingMagic RFID readers and therefore can utilize the ThingMagic Python Wrapper Library (https://github.com/gotthardp/python-mercuryapi). We utilized this library for our project. To install the ThingMagic Python Wrapper Library, simply follow the installation instructions located on its GitHub page.
 
 ### Scanning RFID Tags:
 The scanning of RFID tags occurs through the `scan_rfid.py` file. The following settings are configurable and are modified in-code:
 
+* `reader`: specifies the connection to the reader (see `scan_rfid.py` for example)
 * `runtime`: specifies how long to scan for tags, by default 10 seconds
 * `region`: specifies the geographical region, by default NA2
 * `protocol`: specifies the rfid type, by default GEN2 for EPC Gen. 2
@@ -125,6 +126,11 @@ The scanning of RFID tags occurs through the `scan_rfid.py` file. The following 
 ### Running `scan_rfid.py` on Raspberry Pi
 1. Start a python3 shell 
 1. Import script using `import scan_rfid.py`
+<em>You may stop the program at any time using the common ctrl+c command if the program is ran in the Python shell.</em>
+
+### WiFi Quick Configuration: 
+We have provided a script to enable quick and efficient auto-connection to the required networks. This script was added to the ./bashrc file on the Raspberry Pi Zero W. The script is detailed in the `config_wifi.sh` file.
+
 <br>
 
 ## Unmanned Aerial Vehicle (UAV) Setup/Configuration
@@ -133,15 +139,40 @@ Below, we discuss the drone configuration and setup used for our project.
 ### Current Hardware: 
 Our design currently makes use of the following:
 
-* M6E Simultaneous RFID Reader
-* Raspberry Pi Nano W
+* M6E Nano Simultaneous RFID Reader
+* Raspberry Pi Zero W
 * 1000C PowerBoost Circuit
 * FTDI - to - USB Breakout Board
-* 18650 35A with at least 3000mAh
+* 18650 35A, 3000mAh
 * 3-Port USB Hub
 * 802.11n WiFi Adapter
 * 5dB PCB Antenna
 * U.fl to MMCX
+* 2 18650 Battery Clips
+* 1 JST connector
+* 1 USB to USB-Micro B
+* 1 USB to USB-Mini B
+* 1 USB to USB-Micro B insert
+* A collection of breadboard jumpers
+
+### Hardware Configuration:
+<em>Initial Setup</em> We placed all components on a blank PCB board and utilized 3M Command Strips for attachement. This was done for convience as it allowed us to quickly remove components as necessary for design and testing. We conn
+
+<em>Connecting the RFID Reader, power circuit and Pi</em> We attached the M6E Nano RFID reader, the 1000C PowerBoost and the Raspberry Pi Zero W (in case) to the PCB. We then connected the jumpers from the FTDI breakout board to the appropriate pins on the M6E Nano, namely NC, TX0, RX1, VCC, NC and GND. Please note, that the if one simply connects the pins in order starting from the green side (labeled) of the FTDI board to the corresponding pins on the M6E nano when starting at the green side (labeled), the device will function properly. Nevertheless, a mapping is detailed below:
+
+<pre>
+FTDI | to | M6E
+DTR  | -> | NC
+RX   | -> | TX0
+TX   | -> | RX1
++    | -> | VCC
+CTS  | -> | NC
+GND  | -> | GND
+</pre>
+
+<em>Power Configuration</em> Next, we placed the 18650 battery clips on a piece of 3M Command Strip so that the length was equal to that of the 18650 battery and soldered the wire-side of the JST jumper to the appropriate ends of the battery clips. We then attached this to the top of the Raspberry Pi Zero W case and covered the Pi's header with electrical tape to prevent acidental shorts. Next, we placed the JST connection into the JST input/output on the 1000C PowerBoost. To power the M6E nano we took the 5V and GND output of the 1000C PowerBoost and connected it to the +5V and GND pins on the M6E Nano.
+
+<em>USB Hub </em> Lastly, we connected the USB hub to the Pi and used the USB to Micro-B insert to bridge the connection. To the hub, we attached the USB to Mini-B cable and attached the other end to the FTDI breakout board. We also attached the 802.11n WiFi dongle to the hub. Finally, we took the USB to Micro-B and attached it to the USB output on the 1000C PowerBoost and the Micro-B side to the power input of the Pi.
 
 ### Current Images of UAV
 ![The Drone](drone_img1.JPG)
