@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled 
+18849dbd6b7d569b6d296896e1b1c39dd975782d refs/remotes/github/ARSDK3_branch_3_3
+4d79ae31d593037ee918dabba260c0586151af02 refs/remotes/github/master
+5c8a2d8d6c81188d5847a76f93053dfba788a3ac refs/tags/ARSDK3_version_3_1_0

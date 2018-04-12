@@ -1,0 +1,1 @@
+0000000000000000000000000000000000000000 88f9c3d5af0c4fed00607687d396ec9634803eda Jameson Morgan <morgan.219@wright.edu> 1521722271 -0400	fetch --progress github --tags +refs/heads/*:refs/remotes/github/*: storing head
