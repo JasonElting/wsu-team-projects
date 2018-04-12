@@ -1,0 +1,307 @@
+about.html
+    Warning: Consider adding a lang attribute to the html start tag to declare the language of this document.
+
+    From line 1, column 1; to line 3, column 18
+
+    {% extends "layout2.html" %}↩↩{% block about %}↩<h3>Pr
+
+    For further guidance, consult Declaring the overall language of a page and Choosing language tags.
+
+    If the HTML checker has misidentified the language of this document, please file an issue report or send e-mail to report the problem.
+
+    Error: The character encoding was not declared. Proceeding using windows-1252.
+
+    Error: Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>.
+
+    From line 1, column 1; to line 3, column 18
+
+    {% extends "layout2.html" %}↩↩{% block about %}↩<h3>Pr
+
+    Error: Element head is missing a required instance of child element title.
+
+    From line 1, column 1; to line 3, column 18
+
+    {% extends "layout2.html" %}↩↩{% block about %}↩<h3>Pr
+
+    Content model for element head:
+    If the document is an iframe srcdoc document or if title information is available from a higher-level protocol: Zero or more elements of metadata content, of which no more than one is a title element and no more than one is a base element.
+    Otherwise: One or more elements of metadata content, of which exactly one is a title element and no more than one is a base element.
+
+
+database_updated.html
+    Warning: Consider adding a lang attribute to the html start tag to declare the language of this document.
+
+    From line 1, column 1; to line 3, column 26
+
+    {% extends "layout3.html" %}↩↩{% block body_database %}↩<h2>Cr
+
+    For further guidance, consult Declaring the overall language of a page and Choosing language tags.
+
+    If the HTML checker has misidentified the language of this document, please file an issue report or send e-mail to report the problem.
+
+    Error: The character encoding was not declared. Proceeding using windows-1252.
+
+    Error: Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>.
+
+    From line 1, column 1; to line 3, column 26
+
+    {% extends "layout3.html" %}↩↩{% block body_database %}↩<h2>Cr
+
+    Error: Element head is missing a required instance of child element title.
+
+    From line 1, column 1; to line 3, column 26
+
+    {% extends "layout3.html" %}↩↩{% block body_database %}↩<h2>Cr
+
+    Content model for element head:
+    If the document is an iframe srcdoc document or if title information is available from a higher-level protocol: Zero or more elements of metadata content, of which no more than one is a title element and no more than one is a base element.
+    Otherwise: One or more elements of metadata content, of which exactly one is a title element and no more than one is a base element.
+    Error: Attribute type not allowed on element form at this point.
+
+    From line 6, column 1; to line 6, column 73
+
+    ate</h2>↩↩<form type = "input" action="{{ url_for('create_item') }}" method="post">↩    <dl 
+
+    Attributes for element form:
+    Global attributes
+    accept-charset - Character encodings to use for §4.10.21 Form submission
+    action - URL to use for §4.10.21 Form submission
+    autocomplete - Default setting for autofill feature for controls in the form
+    enctype - Form data set encoding type to use for §4.10.21 Form submission
+    method - HTTP method to use for §4.10.21 Form submission
+    name - Name of form to use in the document.forms API
+    novalidate - Bypass form control validation for §4.10.21 Form submission
+    target - browsing context for §4.10.21 Form submission
+    Error: Bad value {{ url_for('create_item') }} for attribute action on element form: Illegal character in path segment: { is not allowed.
+
+    From line 6, column 1; to line 6, column 73
+
+    ate</h2>↩↩<form type = "input" action="{{ url_for('create_item') }}" method="post">↩    <dl 
+
+    Error: Bad value {{ url_for('get_database_item') }} for attribute action on element form: Illegal character in path segment: { is not allowed.
+
+    From line 21, column 1; to line 21, column 64
+
+    arch</h2>↩<form action="{{ url_for('get_database_item') }}" method="post">↩ <dl>
+
+    Error: Text not allowed in element ul in this context.
+
+    From line 31, column 18; to line 33, column 1
+
+    ss=result>↩ {% if result %}↩    <li><h
+
+    Content model for element ul:
+    Zero or more li and script-supporting elements.
+    Error: Bad value {{ url_for('update_item') }} for attribute action on element form: Illegal character in path segment: { is not allowed.
+
+    From line 44, column 1; to line 44, column 58
+
+    date</h2>↩<form action="{{ url_for('update_item') }}" method="post">↩   <dl>
+
+    Error: Bad value {{ url_for('delete_item') }} for attribute action on element form: Illegal character in path segment: { is not allowed.
+
+    From line 60, column 1; to line 60, column 58
+
+    lete</h2>↩<form action="{{ url_for('delete_item') }}" method="post">↩   <dl>
+
+    Error: Text not allowed in element ul in this context.
+
+    From line 76, column 20; to line 79, column 1
+
+    s=entries>↩ ↩        {% for entry in entries %}↩    <li><h
+
+    Content model for element ul:
+    Zero or more li and script-supporting elements.
+
+
+flight.html
+    Warning: Consider adding a lang attribute to the html start tag to declare the language of this document.
+
+    From line 1, column 1; to line 3, column 19
+
+    {% extends "layout2.html" %}↩↩{% block flight %}↩<h3>Fl
+
+    For further guidance, consult Declaring the overall language of a page and Choosing language tags.
+
+    If the HTML checker has misidentified the language of this document, please file an issue report or send e-mail to report the problem.
+
+    Error: The character encoding was not declared. Proceeding using windows-1252.
+
+    Error: Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>.
+
+    From line 1, column 1; to line 3, column 19
+
+    {% extends "layout2.html" %}↩↩{% block flight %}↩<h3>Fl
+
+    Error: Element head is missing a required instance of child element title.
+
+    From line 1, column 1; to line 3, column 19
+
+    {% extends "layout2.html" %}↩↩{% block flight %}↩<h3>Fl
+
+    Content model for element head:
+    If the document is an iframe srcdoc document or if title information is available from a higher-level protocol: Zero or more elements of metadata content, of which no more than one is a title element and no more than one is a base element.
+    Otherwise: One or more elements of metadata content, of which exactly one is a title element and no more than one is a base element.
+
+
+layout.html
+    Warning: Consider adding a lang attribute to the html start tag to declare the language of this document.
+
+    From line 1, column 16; to line 2, column 6
+
+    type html>↩<head>↩<titl
+
+    For further guidance, consult Declaring the overall language of a page and Choosing language tags.
+
+    If the HTML checker has misidentified the language of this document, please file an issue report or send e-mail to report the problem.
+
+    Error: The character encoding was not declared. Proceeding using windows-1252.
+
+    Error: Bad value 5; url={{ url_for('get_inventory') }} for attribute content on element meta: Illegal character in path segment: { is not allowed.
+
+    From line 4, column 1; to line 4, column 75
+
+    r</title>↩<meta http-equiv="refresh" content="5; url={{ url_for('get_inventory') }}">↩<link
+
+    Error: Bad value {{ url_for('static', filename='favicon.ico') }} for attribute href on element link: Illegal character in path segment: { is not allowed.
+
+    From line 5, column 1; to line 5, column 81
+
+    ry') }}">↩<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">↩<link
+
+    Error: Bad value {{ url_for('static',filename='style.css') }} for attribute href on element link: Illegal character in path segment: { is not allowed.
+
+    From line 6, column 1; to line 6, column 91
+
+    co') }}">↩<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">↩</hea
+
+    Warning: The navigation role is unnecessary for element nav.
+
+    From line 10, column 2; to line 10, column 39
+
+    der</h1>↩   <nav role="navigation" class="navbar">↩     <a 
+
+
+layout2.html
+    Warning: Consider adding a lang attribute to the html start tag to declare the language of this document.
+
+    From line 1, column 16; to line 2, column 6
+
+    type html>↩<head>↩<titl
+
+    For further guidance, consult Declaring the overall language of a page and Choosing language tags.
+
+    If the HTML checker has misidentified the language of this document, please file an issue report or send e-mail to report the problem.
+
+    Error: The character encoding was not declared. Proceeding using windows-1252.
+
+    Error: Bad value {{ url_for('static',filename='style.css') }} for attribute href on element link: Illegal character in path segment: { is not allowed.
+
+    From line 4, column 1; to line 4, column 91
+
+    r</title>↩<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">↩</hea
+
+    Warning: The navigation role is unnecessary for element nav.
+
+    From line 9, column 2; to line 9, column 39
+
+    der</h1>↩	<nav role="navigation" class="navbar">↩	<a h
+
+
+layout3.html    
+    Warning: Consider adding a lang attribute to the html start tag to declare the language of this document.
+
+    From line 1, column 16; to line 2, column 6
+
+    type html>↩<head>↩<titl
+
+    For further guidance, consult Declaring the overall language of a page and Choosing language tags.
+
+    If the HTML checker has misidentified the language of this document, please file an issue report or send e-mail to report the problem.
+
+    Error: The character encoding was not declared. Proceeding using windows-1252.
+
+    Error: Bad value {{ url_for('static', filename='favicon.ico') }} for attribute href on element link: Illegal character in path segment: { is not allowed.
+
+    From line 4, column 1; to line 4, column 81
+
+    r</title>↩<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">↩<link
+
+    Error: Bad value {{ url_for('static',filename='style.css') }} for attribute href on element link: Illegal character in path segment: { is not allowed.
+
+    From line 5, column 1; to line 5, column 91
+
+    co') }}">↩<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">↩</hea
+
+    Warning: The navigation role is unnecessary for element nav.
+
+    From line 9, column 2; to line 9, column 39
+
+    der</h1>↩   <nav role="navigation" class="navbar">↩     <a 
+
+
+show_entries.html
+    Warning: Consider adding a lang attribute to the html start tag to declare the language of this document.
+
+    From line 1, column 1; to line 3, column 19
+
+    {% extends "layout.html" %}↩↩{% block search %}↩<h2>Se
+
+    For further guidance, consult Declaring the overall language of a page and Choosing language tags.
+
+    If the HTML checker has misidentified the language of this document, please file an issue report or send e-mail to report the problem.
+
+    Error: The character encoding was not declared. Proceeding using windows-1252.
+
+    Error: Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>.
+
+    From line 1, column 1; to line 3, column 19
+
+    {% extends "layout.html" %}↩↩{% block search %}↩<h2>Se
+
+    Error: Element head is missing a required instance of child element title.
+
+    From line 1, column 1; to line 3, column 19
+
+    {% extends "layout.html" %}↩↩{% block search %}↩<h2>Se
+
+    Content model for element head:
+    If the document is an iframe srcdoc document or if title information is available from a higher-level protocol: Zero or more elements of metadata content, of which no more than one is a title element and no more than one is a base element.
+    Otherwise: One or more elements of metadata content, of which exactly one is a title element and no more than one is a base element.
+    Error: Bad value {{ url_for('get_item') }} for attribute action on element form: Illegal character in path segment: { is not allowed.
+
+    From line 5, column 1; to line 5, column 55
+
+    arch</h2>↩<form action="{{ url_for('get_item') }}" method="post">↩  <dl>
+
+    Error: Text not allowed in element ul in this context.
+
+    From line 15, column 18; to line 17, column 1
+
+    ss=result>↩ {% if result %}↩    <li><h
+
+    Content model for element ul:
+    Zero or more li and script-supporting elements.
+    Error: Bad value {{ url_for('delete_returned_inventory') }} for attribute action on element form: Illegal character in path segment: { is not allowed.
+
+    From line 27, column 1; to line 27, column 72
+
+    lear</h2>↩<form action="{{ url_for('delete_returned_inventory') }}" method="post">↩ <dl>
+
+    Error: Element dl is missing a required child element.
+
+    From line 29, column 2; to line 29, column 5
+
+    >↩  <dl>    ↩   <dd><input
+
+    Content model for element dl:
+    Either:Zero or more groups each consisting of one or more dt elements followed by one or more dd elements, optionally intermixed with script-supporting elements.
+    Or: One or more div elements, optionally intermixed with script-supporting elements.
+    Error: Text not allowed in element ul in this context.
+
+    From line 35, column 20; to line 38, column 1
+
+    s=entries>↩ ↩        {% for entry in entries %}↩    <li><h
+
+    Content model for element ul:
+    Zero or more li and script-supporting elements.

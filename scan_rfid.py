@@ -1,6 +1,13 @@
-#!/usr/bin/env python3
+#!/usr/bin/env
+# WSU Team Projects 2
+#scan_rfid.py
+#This script is designed for use on a raspberry pi connected to the WSU_Secure network, and a M6E nano ThingMagic RFID reader
+#This script will read any RFID tags near the antenna and forward the information to the team21.cs.wright.edu under the
+#user drone with the password 36024pAbxHY
+#
 from __future__ import print_function
 import time
+import sys
 import mercury
 import subprocess
 reader = mercury.Reader("tmr:///dev/ttyUSB0", baudrate=115200)
@@ -26,11 +33,13 @@ reader.set_read_plan([antenna], protocol, read_power=power)
 #subprocess.call(['curl', '-u', credentials,'-d', tag, '-X', 'POST', post_url])
 
 #reader.start_reading(lambda tag: print(tag.epc, tag.antenna, tag.read_count, tag.rssi))
-reader.start_reading(lambda tag: post_tag(tag))
-time.sleep(runtime)
-reader.stop_reading()
-
-def post_tag(tag):
-    tag_to_post = "tag="+tag.epc 
-    subprocess.call(['curl', '-u', credentials,'-d', tag_to_post, '-X', 'POST', post_url])
-    print(tag.epc, tag.antenna, tag.read_count, tag.rssi)
+try:
+    reader.start_reading(lambda tag: subprocess.call(['curl','-u',credentials,'-d',"tag="+tag.epc.decode("utf-8"),'-X','POST',post_url]))
+    # starts the reader and forwards info using curl to the server specified in 'post_url'
+    time.sleep(runtime)
+    reader.stop_reading()
+    sys.exit()
+except KeyboardInterrupt:
+    print("KB interrupt detected: exiting")
+    sys.exit()
+sys.exit()
