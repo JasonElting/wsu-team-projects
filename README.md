@@ -25,6 +25,22 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+### References/Sources:
+ARDroneSDK3: http://developer.parrot.com/docs/bebop/​
+
+Bebop Samples: https://github.com/Parrot-Developers/Samples​
+
+Mercury API: http://www.thingmagic.com/mercuryapi​
+
+Mercury API Python Wrapper: https://github.com/gotthardp/python-mercuryapi​
+
+http://flask.pocoo.org/docs/0.12/tutorial/​
+
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world​
+
+https://www.iconfinder.com/icons/2633201/camera_drone_helicopter_spy_technology_icon#size=256​
+
+http://flask.pocoo.org/snippets/8/
 
 ### Notice:
 
