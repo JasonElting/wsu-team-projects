@@ -9,7 +9,7 @@ The project utilizes a Bebop 2 drone as the base and utilizes an RFID scanner to
 (Note: This documentation was formatted with Markdown and therefore a Markdown reader is recommended!)
 
 ### Authors:
-[Jason Elting](mailto:elting.2@wright.edu "elting.2@wright.edu"), [Jameson Morgan](mailto:morgan.219@wright.edu "morgan.219@wright.edu"), [Zia Anwar](mailto:anwar.3@wright.edu "anwar.3@wright.edu") and [Kiran Wani](mailto:wani.4@wright.edu "wani.4@wright.edu")
+[Jason Elting](mailto:jason@elting.dev "elting.2@wright.edu"), [Jameson Morgan](mailto:morgan.219@wright.edu "morgan.219@wright.edu"), [Zia Anwar](mailto:anwar.3@wright.edu "anwar.3@wright.edu") and [Kiran Wani](mailto:wani.4@wright.edu "wani.4@wright.edu")
 
 ### GitHub:
 
